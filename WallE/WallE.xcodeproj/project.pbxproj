@@ -12,6 +12,12 @@
 		D2FD2B8C27AF5FA800277268 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D2FD2B8A27AF5FA800277268 /* Main.storyboard */; };
 		D2FD2B8E27AF5FA900277268 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D2FD2B8D27AF5FA900277268 /* Assets.xcassets */; };
 		D2FD2B9127AF5FA900277268 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D2FD2B8F27AF5FA900277268 /* LaunchScreen.storyboard */; };
+		D2FD2BA127AF641700277268 /* Rover.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2FD2BA027AF641700277268 /* Rover.swift */; };
+		D2FD2BA327AF679500277268 /* NetworkController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2FD2BA227AF679500277268 /* NetworkController.swift */; };
+		D2FD2BA527AF67D000277268 /* RoverListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2FD2BA427AF67D000277268 /* RoverListTableViewController.swift */; };
+		D2FD2BA927AF697200277268 /* ImageListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2FD2BA827AF697200277268 /* ImageListViewController.swift */; };
+		D2FD2BAC27AF76E500277268 /* ImageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2FD2BAB27AF76E500277268 /* ImageTableViewCell.swift */; };
+		D2FD2BAE27AF79F900277268 /* RoverImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2FD2BAD27AF79F900277268 /* RoverImage.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +28,12 @@
 		D2FD2B8D27AF5FA900277268 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D2FD2B9027AF5FA900277268 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D2FD2B9227AF5FA900277268 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D2FD2BA027AF641700277268 /* Rover.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rover.swift; sourceTree = "<group>"; };
+		D2FD2BA227AF679500277268 /* NetworkController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkController.swift; sourceTree = "<group>"; };
+		D2FD2BA427AF67D000277268 /* RoverListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoverListTableViewController.swift; sourceTree = "<group>"; };
+		D2FD2BA827AF697200277268 /* ImageListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageListViewController.swift; sourceTree = "<group>"; };
+		D2FD2BAB27AF76E500277268 /* ImageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageTableViewCell.swift; sourceTree = "<group>"; };
+		D2FD2BAD27AF79F900277268 /* RoverImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoverImage.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,8 +66,10 @@
 		D2FD2B8327AF5FA800277268 /* WallE */ = {
 			isa = PBXGroup;
 			children = (
+				D2FD2B9927AF63D900277268 /* Models */,
+				D2FD2B9A27AF63DD00277268 /* Views */,
+				D2FD2B9B27AF63E100277268 /* Controllers */,
 				D2FD2B9827AF604C00277268 /* Resources */,
-				D2FD2B8A27AF5FA800277268 /* Main.storyboard */,
 			);
 			path = WallE;
 			sourceTree = "<group>";
@@ -70,6 +84,66 @@
 				D2FD2B9227AF5FA900277268 /* Info.plist */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		D2FD2B9927AF63D900277268 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				D2FD2BA027AF641700277268 /* Rover.swift */,
+				D2FD2BAD27AF79F900277268 /* RoverImage.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		D2FD2B9A27AF63DD00277268 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				D2FD2B8A27AF5FA800277268 /* Main.storyboard */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		D2FD2B9B27AF63E100277268 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				D2FD2B9F27AF63FC00277268 /* Cell */,
+				D2FD2B9E27AF63EF00277268 /* Network */,
+				D2FD2B9D27AF63EA00277268 /* View */,
+				D2FD2B9C27AF63E500277268 /* Model */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		D2FD2B9C27AF63E500277268 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		D2FD2B9D27AF63EA00277268 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				D2FD2BA427AF67D000277268 /* RoverListTableViewController.swift */,
+				D2FD2BA827AF697200277268 /* ImageListViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		D2FD2B9E27AF63EF00277268 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				D2FD2BA227AF679500277268 /* NetworkController.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		D2FD2B9F27AF63FC00277268 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				D2FD2BAB27AF76E500277268 /* ImageTableViewCell.swift */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -143,8 +217,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D2FD2BAC27AF76E500277268 /* ImageTableViewCell.swift in Sources */,
+				D2FD2BA927AF697200277268 /* ImageListViewController.swift in Sources */,
+				D2FD2BA327AF679500277268 /* NetworkController.swift in Sources */,
+				D2FD2BA527AF67D000277268 /* RoverListTableViewController.swift in Sources */,
+				D2FD2BAE27AF79F900277268 /* RoverImage.swift in Sources */,
 				D2FD2B8527AF5FA800277268 /* AppDelegate.swift in Sources */,
 				D2FD2B8727AF5FA800277268 /* SceneDelegate.swift in Sources */,
+				D2FD2BA127AF641700277268 /* Rover.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

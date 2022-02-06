@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="aN6-Fv-xQ7">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Choose a Rover-->
+        <scene sceneID="olC-UG-3o7">
+            <objects>
+                <tableViewController id="YlX-Qe-VNJ" customClass="RoverListTableViewController" customModule="WallE" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="GeN-Dn-n70">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="roverCell" id="hvd-el-beR">
+                                <rect key="frame" x="0.0" y="44.5" width="414" height="43.5"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="hvd-el-beR" id="cRp-bn-oQq">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="3wr-e3-864" kind="show" identifier="toRoverPics" id="wJL-cK-SfV"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="YlX-Qe-VNJ" id="hDQ-kY-ZTg"/>
+                            <outlet property="delegate" destination="YlX-Qe-VNJ" id="gsd-Oj-a2e"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Choose a Rover" id="Set-0O-iwP"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Hyj-UO-QxI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="803" y="93"/>
+        </scene>
+        <!--Image List View Controller-->
+        <scene sceneID="KcD-o6-gVy">
+            <objects>
+                <viewController id="3wr-e3-864" customClass="ImageListViewController" customModule="WallE" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="yEv-Vf-d7R">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" style="wheels" translatesAutoresizingMaskIntoConstraints="NO" id="ew8-1I-DTA">
+                                <rect key="frame" x="0.0" y="88" width="414" height="216"/>
+                                <date key="minimumDate" timeIntervalSinceReferenceDate="63111600">
+                                    <!--2003-01-01 11:00:00 +0000-->
+                                </date>
+                                <date key="maximumDate" timeIntervalSinceReferenceDate="694177200">
+                                    <!--2022-12-31 11:00:00 +0000-->
+                                </date>
+                                <connections>
+                                    <action selector="datePickerValueChanged:" destination="3wr-e3-864" eventType="valueChanged" id="AUi-Jp-1mU"/>
+                                </connections>
+                            </datePicker>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Ge7-v1-gFa">
+                                <rect key="frame" x="0.0" y="304" width="414" height="558"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="imageCell" rowHeight="236" id="vdo-c2-EVb" customClass="ImageTableViewCell" customModule="WallE" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="44.5" width="414" height="236"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="vdo-c2-EVb" id="PpY-qv-ynx">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="236"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="QIi-rP-YHV">
+                                                    <rect key="frame" x="25" y="16" width="364" height="204"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(camera name)" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v4X-XD-CsZ">
+                                                            <rect key="frame" x="124.5" y="0.0" width="115.5" height="20.5"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="249" verticalHuggingPriority="249" image="camera" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="rHd-lN-qLN">
+                                                            <rect key="frame" x="42" y="25" width="280.5" height="177.5"/>
+                                                        </imageView>
+                                                    </subviews>
+                                                    <constraints>
+                                                        <constraint firstItem="rHd-lN-qLN" firstAttribute="width" secondItem="QIi-rP-YHV" secondAttribute="height" multiplier="70:51" id="NGh-k1-MzH"/>
+                                                        <constraint firstItem="rHd-lN-qLN" firstAttribute="width" secondItem="QIi-rP-YHV" secondAttribute="width" multiplier="0.75" constant="7.5" id="fvi-rI-zwo"/>
+                                                    </constraints>
+                                                </stackView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="QIi-rP-YHV" firstAttribute="centerX" secondItem="PpY-qv-ynx" secondAttribute="centerX" id="5Ke-hn-wcC"/>
+                                                <constraint firstItem="QIi-rP-YHV" firstAttribute="leading" secondItem="PpY-qv-ynx" secondAttribute="leadingMargin" constant="5" id="EPO-75-1DI"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="QIi-rP-YHV" secondAttribute="bottom" constant="5" id="G3C-FX-vAz"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="QIi-rP-YHV" secondAttribute="trailing" constant="5" id="Jnm-bR-Dr8"/>
+                                                <constraint firstItem="QIi-rP-YHV" firstAttribute="centerY" secondItem="PpY-qv-ynx" secondAttribute="centerY" id="L7X-N3-IHf"/>
+                                                <constraint firstItem="QIi-rP-YHV" firstAttribute="top" secondItem="PpY-qv-ynx" secondAttribute="topMargin" constant="5" id="cxF-Nm-dJL"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="cameraNameLabel" destination="v4X-XD-CsZ" id="KDJ-WF-y60"/>
+                                            <outlet property="roverImageView" destination="rHd-lN-qLN" id="d5B-RP-Stx"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="nIs-Ia-vfW"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Ge7-v1-gFa" firstAttribute="leading" secondItem="nIs-Ia-vfW" secondAttribute="leading" id="AZs-7C-ezf"/>
+                            <constraint firstItem="ew8-1I-DTA" firstAttribute="top" secondItem="nIs-Ia-vfW" secondAttribute="top" id="HMF-kA-wO6"/>
+                            <constraint firstItem="ew8-1I-DTA" firstAttribute="leading" secondItem="nIs-Ia-vfW" secondAttribute="leading" id="MbM-Ar-wgu"/>
+                            <constraint firstItem="nIs-Ia-vfW" firstAttribute="trailing" secondItem="Ge7-v1-gFa" secondAttribute="trailing" id="Mw1-kQ-T8G"/>
+                            <constraint firstItem="ew8-1I-DTA" firstAttribute="centerX" secondItem="yEv-Vf-d7R" secondAttribute="centerX" id="TBK-YV-taC"/>
+                            <constraint firstItem="Ge7-v1-gFa" firstAttribute="top" secondItem="ew8-1I-DTA" secondAttribute="bottom" id="m6H-Ho-XLa"/>
+                            <constraint firstItem="nIs-Ia-vfW" firstAttribute="bottom" secondItem="Ge7-v1-gFa" secondAttribute="bottom" id="vUm-l0-LWv"/>
+                            <constraint firstItem="ew8-1I-DTA" firstAttribute="trailing" secondItem="nIs-Ia-vfW" secondAttribute="trailing" id="xEM-au-wdb"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="MXd-1d-NBy"/>
+                    <connections>
+                        <outlet property="datePicker" destination="ew8-1I-DTA" id="aBq-nd-klz"/>
+                        <outlet property="roverImageTableView" destination="Ge7-v1-gFa" id="pHv-wS-IWA"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cho-yf-0Ma" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1740.5797101449277" y="91.741071428571431"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="DV8-4m-jSM">
+            <objects>
+                <navigationController id="aN6-Fv-xQ7" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="2mE-Xh-rh6">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="YlX-Qe-VNJ" kind="relationship" relationship="rootViewController" id="hP8-NS-2wY"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2ZN-n5-JmG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-86" y="93"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="camera" catalog="system" width="128" height="94"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
