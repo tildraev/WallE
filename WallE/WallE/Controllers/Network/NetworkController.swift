@@ -100,7 +100,7 @@ class NetworkController {
         urlComponents.queryItems = [dateQuery, apiKeyQuery]
         
         guard let finalURL = urlComponents.url else {
-            print("Unable to create finalURL from urlComponents: \(urlComponents.url)")
+            print("Unable to create finalURL from urlComponents: \(String(describing: urlComponents.url))")
             completion(nil)
             return
         }
@@ -112,7 +112,7 @@ class NetworkController {
             }
             
             guard let data = data else {
-                print("Error with data: \(data)")
+                print("Error with data: \(String(describing: data))")
                 completion(nil)
                 return
             }
@@ -160,7 +160,7 @@ class NetworkController {
             }
             
             guard let data = data else {
-                print("Invalid data: \(data)")
+                print("Invalid data: \(String(describing: data))")
                 completion(nil)
                 return
             }
