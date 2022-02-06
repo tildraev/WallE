@@ -75,17 +75,22 @@
                                                     <rect key="frame" x="25" y="16" width="364" height="204"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(camera name)" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v4X-XD-CsZ">
-                                                            <rect key="frame" x="124.5" y="0.0" width="115.5" height="20.5"/>
+                                                            <rect key="frame" x="124.5" y="0.0" width="115.5" height="20"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="20" id="Oab-rO-XJX"/>
+                                                            </constraints>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="249" verticalHuggingPriority="249" image="camera" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="rHd-lN-qLN">
-                                                            <rect key="frame" x="42" y="25" width="280.5" height="177.5"/>
+                                                            <rect key="frame" x="42" y="24.5" width="280.5" height="178"/>
                                                         </imageView>
                                                     </subviews>
                                                     <constraints>
+                                                        <constraint firstAttribute="bottom" secondItem="rHd-lN-qLN" secondAttribute="bottom" id="ITB-fG-NWn"/>
                                                         <constraint firstItem="rHd-lN-qLN" firstAttribute="width" secondItem="QIi-rP-YHV" secondAttribute="height" multiplier="70:51" id="NGh-k1-MzH"/>
+                                                        <constraint firstItem="v4X-XD-CsZ" firstAttribute="top" secondItem="QIi-rP-YHV" secondAttribute="top" id="cMa-JL-PlU"/>
                                                         <constraint firstItem="rHd-lN-qLN" firstAttribute="width" secondItem="QIi-rP-YHV" secondAttribute="width" multiplier="0.75" constant="7.5" id="fvi-rI-zwo"/>
                                                     </constraints>
                                                 </stackView>

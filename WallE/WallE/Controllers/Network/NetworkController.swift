@@ -58,7 +58,6 @@ class NetworkController {
                     }
                     
                     var listOfRovers: [Rover] = []
-                    print(roverList)
                     
                     for roverDictionary in roverList {
                         if let roverToAdd = Rover(dictionary: roverDictionary) {
@@ -137,5 +136,38 @@ class NetworkController {
             }
         }.resume()
         
+    }
+    
+    static func fetchImage(imageSource: String, completion: @escaping (UIImage?) -> Void) {
+        
+//        var secureSource = imageSource
+//        let index = secureSource.index(secureSource.startIndex, offsetBy: 4)
+//        secureSource.insert("s", at: index)
+        
+        guard let imageURL = URL(string: imageSource) else {
+            print("could not make a valid URL from source: \(imageSource)")
+            completion(nil)
+            return
+        }
+        
+        
+        
+        URLSession.shared.dataTask(with: imageURL) { data, _, error in
+            if let error = error {
+                print("Error starting datatask from url: \(imageURL)", error)
+                completion(nil)
+                return
+            }
+            
+            guard let data = data else {
+                print("Invalid data: \(data)")
+                completion(nil)
+                return
+            }
+            
+            let imageToReturn = UIImage(data: data)
+            completion(imageToReturn)
+            
+        }.resume()
     }
 }
